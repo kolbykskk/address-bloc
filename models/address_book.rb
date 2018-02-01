@@ -21,7 +21,11 @@ class AddressBook
   def remove_entry(name, phone_number, email)
     entries.each do |entry|
       if entry.name == name && entry.phone_number == phone_number && entry.email == email
+<<<<<<< HEAD
         entries.delete(entry)
+=======
+        entries.delete(entry.index)
+>>>>>>> checkpoint-5-menu
       end
     end
   end
