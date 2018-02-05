@@ -14,6 +14,7 @@ def main_menu
   puts "3 - Search for an entry"
   puts "4 - Import entries from a CSV"
   puts "5 - Exit"
+  puts '6 - Nuke'
   print "Enter your selection: "
 
   selection = gets.to_i
@@ -37,6 +38,10 @@ def main_menu
      when 5
        puts "Good-bye!"
        exit(0)
+     when 6
+       system 'clear'
+       nuke
+       main_menu
      else
        system "clear"
        puts "Sorry, that is not a valid input"
@@ -76,6 +81,12 @@ def main_menu
 
     puts 'Updated entry:'
     puts entry
+  end
+
+  def nuke
+    address_book.entries.clear
+    system 'clear'
+    puts 'You just nuked all entries'
   end
 
   def create_entry
